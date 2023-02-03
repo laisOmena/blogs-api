@@ -17,12 +17,24 @@ const getByUserEmail = async (email) => {
 
 const getAllUsers = async () => {
   const users = await User.findAll();
-  console.log('>>>>>>>', users);
   const allUsers = users
     .map(({ dataValues: { id, displayName, email, image } }) => ({ 
       id, displayName, email, image }));
-  console.log(allUsers);
   return allUsers;
 };
 
-module.exports = { getLogin, postUser, getByUserEmail, getAllUsers };
+const getById = async (idUser) => {
+  const user = await User.findByPk(idUser);
+  if (!user) {
+    return null;
+  }
+  const userId = {
+    id: user.id,
+    displayName: user.displayName,
+    email: user.email,
+    image: user.image,
+  };
+  return userId;
+};
+
+module.exports = { getLogin, postUser, getByUserEmail, getAllUsers, getById };

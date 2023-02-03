@@ -21,4 +21,6 @@ router.post(
 
 router.get('/', validateToken, userController.getAllUsers);
 
+router.get('/:id', validateToken, userController.getById);
+
 module.exports = router;
