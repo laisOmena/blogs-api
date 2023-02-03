@@ -35,7 +35,7 @@ const registerUser = async (req, res) => {
 
   const existing = await userService.getLogin(email, password);
   if (existing) {
-    res.status(409).send({
+    return res.status(409).send({
       message: 'User already registered',
     });
   }
