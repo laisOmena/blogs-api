@@ -46,4 +46,9 @@ const registerUser = async (req, res) => {
   res.status(201).send({ token });
 };
 
-module.exports = { login, registerUser };
+const getAllUsers = async (req, res) => {
+  const users = await userService.getAllUsers();
+  res.status(200).json(users);
+};
+
+module.exports = { login, registerUser, getAllUsers };

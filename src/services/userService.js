@@ -10,4 +10,19 @@ const postUser = async (displayName, email, password, image) => {
   return newUser;
 };
 
-module.exports = { getLogin, postUser };
+const getByUserEmail = async (email) => {
+  const user = await User.findOne({ where: { email } });
+  return user;
+};
+
+const getAllUsers = async () => {
+  const users = await User.findAll();
+  console.log('>>>>>>>', users);
+  const allUsers = users
+    .map(({ dataValues: { id, displayName, email, image } }) => ({ 
+      id, displayName, email, image }));
+  console.log(allUsers);
+  return allUsers;
+};
+
+module.exports = { getLogin, postUser, getByUserEmail, getAllUsers };
