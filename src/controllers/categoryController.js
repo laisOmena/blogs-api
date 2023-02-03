@@ -9,4 +9,9 @@ const postCategory = async (req, res) => {
   res.status(201).send(category);
 };
 
-module.exports = { postCategory };
+const getAllCategory = async (req, res) => {
+  const categories = await categoryService.getAllCategory();
+  res.status(200).json(categories);
+};
+
+module.exports = { postCategory, getAllCategory };

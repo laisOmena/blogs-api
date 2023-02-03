@@ -9,4 +9,6 @@ const router = express.Router();
 
 router.post('/', validateToken, validateCategoryName, categoryController.postCategory);
 
+router.get('/', validateToken, categoryController.getAllCategory);
+
 module.exports = router;
