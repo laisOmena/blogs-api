@@ -1,19 +1,49 @@
 require('dotenv').config();
 
+const jwt = require('jsonwebtoken');
 const userService = require('../services/userService');
+
+const generateToken = (data) => {
+  const { JWT_SECRET } = process.env;
+  const jwtHeader = {
+    expiresIn: '24h',
+    algorithm: 'HS256',
+  }; 
+  const { email } = data;
+
+  const token = jwt.sign({ data: { email } }, JWT_SECRET, jwtHeader);
+  return token;
+};
 
 const login = async (req, res) => {
   const { email, password } = req.body;
 
   const user = await userService.getLogin(email, password);
-
+  
   if (!user) {
     return res.status(400).send({
       message: 'Invalid fields',
     });
   }
-
-  res.status(200).send({ token: user });
+  
+  const token = generateToken(user);
+  res.status(200).send({ token });
 };
 
-module.exports = { login };
+const registerUser = async (req, res) => {
+  const { displayName, email, password, image } = req.body;
+
+  const existing = await userService.getLogin(email, password);
+  if (existing) {
+    res.status(409).send({
+      message: 'User already registered',
+    });
+  }
+
+  const user = await userService.postUser(displayName, email, password, image);
+
+  const token = generateToken(user);
+  res.status(201).send({ token });
+};
+
+module.exports = { login, registerUser };

@@ -1,6 +1,7 @@
 const express = require('express');
 
 const login = require('./routes/login');
+const user = require('./routes/userRoute');
 
 // ...
 
@@ -9,6 +10,7 @@ const app = express();
 app.use(express.json());
 
 app.use('/login', login);
+app.use('/user', user);
 
 // ...
 
