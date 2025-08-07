@@ -26,7 +26,7 @@
     "headers": [
       {
         "name": "Authorization",
-        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20ifSwiaWF0IjoxNjc1NDY1ODg5LCJleHAiOjE2NzU1NTIyODl9.mjVSpxBzuLe87A6OxtCjbLVKzaxv7tfEDULaC_IPw6Y"
+        "value": ""
       }
     ],
     "params": [],
@@ -50,7 +50,7 @@
     "headers": [
       {
         "name": "Authorization",
-        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20ifSwiaWF0IjoxNjc1NDY1ODg5LCJleHAiOjE2NzU1NTIyODl9.mjVSpxBzuLe87A6OxtCjbLVKzaxv7tfEDULaC_IPw6Y"
+        "value": ""
       }
     ],
     "params": [],
@@ -74,7 +74,7 @@
     "headers": [
       {
         "name": "Authorization",
-        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoibGV3aXNoYW1pbHRvbkBnbWFpbC5jb20ifSwiaWF0IjoxNjc1NTk1Njg5LCJleHAiOjE2NzU2ODIwODl9.4eNIO_nDxiJ-jtONtG-1zGs04AxEeY0zBXxwWaUIfOA"
+        "value": ""
       }
     ],
     "params": [],
